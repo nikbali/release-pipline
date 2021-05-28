@@ -14,7 +14,7 @@ class FirstController {
         return ResponseEntity.ok("Its Ok")
     }
 
-    @GetMapping(value = ["/w"])
+    @GetMapping(value = ["/www"])
     fun getTwo(): ResponseEntity<String> {
         return ResponseEntity.ok("Its Ok")
     }
