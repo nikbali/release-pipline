@@ -1,6 +1,8 @@
 import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 plugins {
+	`maven-publish`
+	java
 	id("org.springframework.boot") version "2.4.5"
 	id("io.spring.dependency-management") version "1.0.11.RELEASE"
 	kotlin("jvm") version "1.4.32"
@@ -9,7 +11,7 @@ plugins {
 	id("nebula.release") version "15.3.0"
 }
 
-group = "com.nibali"
+group = "ru.nibali"
 version = "0.0.1-SNAPSHOT"
 java.sourceCompatibility = JavaVersion.VERSION_11
 
@@ -25,6 +27,16 @@ dependencies {
 
 	runtimeOnly("com.h2database:h2")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
+}
+
+publishing {
+	publications {
+		create<MavenPublication>("m") {
+			groupId
+			artifactId
+			version
+		}
+	}
 }
 
 tasks.withType<KotlinCompile> {
