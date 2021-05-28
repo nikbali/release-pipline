@@ -13,4 +13,9 @@ class FirstController {
     fun get(): ResponseEntity<String> {
         return ResponseEntity.ok("Its Ok")
     }
+
+    @GetMapping(value = ["/w"])
+    fun getTwo(): ResponseEntity<String> {
+        return ResponseEntity.ok("Its Ok")
+    }
 }
